@@ -1,0 +1,44 @@
+/** 
+ * Name: Nicholas Hatch
+ * Date: 09/11/2001
+*/
+
+// write a code to calculate coumpound interest using variable P(initial value),t(time),r(interest rate), and A(total amount calculated)
+
+import java.util.Scanner; // imports our scanner class, this is going to allow user input
+
+public class Lab3NicholasHatch
+{
+    public static void main(String[] args)
+{
+Scanner input = new Scanner(System.in); // creates our scanner, system.in means it will read what is input by the user
+
+double principal; //initial value
+int time;
+double rate;
+double total;
+// declared our variable above. Used double and int the declare them
+System.out.println("Please input the principal (inital value)");
+// This is prompting our user to input thier initial value
+principal = input.nextDouble();
+// above sets our principal equal to what is input by the user
+System.out.println("Please input the time in years");
+// Prompts user to enter the time in years
+time = input.nextInt();
+// sets what the user inputs equal to time
+System.out.println("Please provide the rate");
+// asking user to enter the rate
+rate = input.nextDouble();
+// sets rate equal to what our user inputs
+rate = rate / 100;
+// turns our provided rate to into a decimal
+total = principal * Math.pow ((1 + rate) , time);
+// our equation to calculate compound interest
+System.out.println("The total after " +  time  + " years is " +  total);
+System.out.println("The amount of interest earned is: "  + (total - principal));
+// String concatenation to display our results in a sentence
+// first print statement shows the total amount after interest is calculated
+// second print statement minuses the principal from the calculated total to show how much interest has accumilated
+}
+
+}
